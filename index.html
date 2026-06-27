@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 2nd Anniversary!</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #ffe6eb;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            text-align: center;
+        }
+        h1 {
+            color: #ff4d6d;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        /* ကိတ်မုန့် Area */
+        .cake-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .cake-container:hover {
+            transform: scale(1.05);
+        }
+        .instruction {
+            margin-top: 15px;
+            color: #666;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        /* Surprise Area (အစပိုင်းမှာ ဖျောက်ထားမည်) */
+        .surprise-container {
+            display: none;
+            animation: fadeIn 1.5s ease-in-out forwards;
+            max-width: 90%;
+            width: 350px;
+        }
+        .girl-img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border: 5px solid #fff;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #ff4d6d;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="cakeSection" class="cake-container" onclick="blowCandle()">
+        <h1>Happy 2nd Anniversary, My Love! 💖</h1>
+        <svg width="200" height="200" viewBox="0 0 100 100">
+            <path id="flame" d="M50,15 C45,25 48,30 50,35 C52,30 55,25 50,15 Z" fill="#ff9e00" />
+            <rect x="48" y="35" width="4" height="15" fill="#e9d8a6" />
+            <ellipse cx="50" cy="55" rx="35" ry="10" fill="#ffb3c1" />
+            <rect x="15" y="55" width="70" height="20" fill="#ffb3c1" />
+            <ellipse cx="50" cy="75" rx="35" ry="10" fill="#fae0e4" />
+            <path d="M15,55 Q20,60 25,55 Q30,60 35,55 Q40,60 45,55 Q50,60 55,55 Q60,60 65,55 Q70,60 75,55 Q80,60 85,55" fill="none" stroke="#fff" stroke-width="3" />
+        </svg>
+        <p class="instruction">👇 ကိတ်မုန့်ကိုနှိပ်ပြီး ဖယောင်းတိုင်မီးငြိမ်းလိုက်ပါ 👇</p>
+    </div>
+
+    <div id="surpriseSection" class="surprise-container">
+        <h1>Happy 2 Years Anniversary ပါ မိန်းမရေ... 🌹</h1>
+        
+        <img class="girl-img" src="girl.jpg" alt="My Beautiful Girlfriend">
+        
+        <div class="message">
+            ကိုယ်နဲ့အတူ ၂ နှစ်တိုင်တိုင် လက်တွဲပေးခဲ့လို့ ကျေးဇူးအများကြီးတင်ပါတယ်ရှင်။ <br>
+            ဒီထက်မက အကြာကြီး ချစ်သွားရအောင်နော်... တူးတူးရေ 🥰❤️
+        </div>
+    </div>
+
+    <script>
+        function blowCandle() {
+            // ၁။ ဖယောင်းတိုင်မီးကို ဖျောက်လိုက်မယ်
+            document.getElementById('flame').style.display = 'none';
+            
+            // ၂။ ခဏစောင့်ပြီး ကိတ်မုန့်အပိုင်းကို ဖျောက်၊ Surprise အပိုင်းကို ဖော်မယ်
+            setTimeout(function() {
+                document.getElementById('cakeSection').style.display = 'none';
+                document.getElementById('surpriseSection').style.display = 'block';
+            }, 800); // 0.8 စက္ကန့် စောင့်ပြီးမှ ပုံပေါ်လာမည်
+        }
+    </script>
+</body>
+</html>
